@@ -1,3 +1,4 @@
+const redis = require('../config/cache')
 const blacklistModel = require('../models/blacklist.model')
 const userModel = require('../models/user.model')
 // const bcrypt = require('bcryptjs')
@@ -12,7 +13,7 @@ async function authUser(req,res,next){
         })
     }
 
-    const isTokenBlacklisted = await blacklistModel.findOne({token})
+    const isTokenBlacklisted = await redis.get(token)
 
     if(!isTokenBlacklisted){
         return res.status(401).json({
