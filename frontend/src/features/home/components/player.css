@@ -1,0 +1,100 @@
+@charset "UTF-8";
+.player-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.player-container audio {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.player-container audio::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.player-container .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.player-container .controls button {
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.player-container .controls button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.player-container .controls button:active {
+  transform: translateY(0);
+}
+.player-container .controls button.backward::before {
+  content: "⏮ ";
+}
+.player-container .controls button.forward::after {
+  content: " ⏭";
+}
+.player-container .controls .speed-selector {
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.player-container .controls .speed-selector:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.player-container .controls .speed-selector:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+.player-container .controls .speed-selector option {
+  background-color: #667eea;
+  color: white;
+}
+.player-container .time-display {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .player-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .player-container .controls {
+    gap: 10px;
+  }
+  .player-container .controls button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  .player-container .controls .speed-selector {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=player.css.map */
